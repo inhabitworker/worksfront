@@ -1,0 +1,28 @@
+{
+    "name": "inhabitworker/worksfront",
+    "description": "Theme for the wordpress/woocommerce inhabit.works website.",
+    "type": "wordpress-theme",
+	"license": "GPL-3.0+",
+    "require": {
+        "vlucas/phpdotenv": "^5.5"
+    },
+    "authors": [
+        {
+            "name": "inhabitworker",
+            "email": "inhabitworker@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "php-stubs/woocommerce-stubs": "^8.2",
+        "squizlabs/php_codesniffer": "^3.7",
+        "wp-coding-standards/wpcs": "^3.0",
+        "woocommerce/woocommerce-sniffs": "^1.0",
+        "phpcompatibility/php-compatibility": "^9.3"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+			"composer/installers": true
+        }
+    }
+}

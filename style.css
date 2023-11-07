@@ -1,0 +1,61 @@
+/*
+Theme Name: myTheme
+Theme URI: https://inhabit.works
+Author: inhabitant 
+Author URI: https://inhabit.works/
+Description: This is my theme. my moment. my movie. i am the main character.
+Tags: blog, woocommerce, ecommerce, woo, store, shop, 3d
+Version: 1.3
+Requires at least: 5.0
+Tested up to: 5.4
+Requires PHP: 7.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: inhabit
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/* Variables */
+:root{
+    --highlight: teal;
+    --complement: orange;
+    --bg: white;
+    --fg: black;
+    --mg: gray;
+
+    color: var(--fg);
+    background-color: var(--bg);
+    font-size: 1rem;
+}
+
+/* Header */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+}
+
+.identity {
+    text-align: center;
+    font-size: 1.8em;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+
+nav ul li {
+    display: block;
+    margin: 1em;
+}
+
+header img {
+    display: block;
+    max-height: 2em;
+    width: auto;
+    object-fit: contain;
+}
