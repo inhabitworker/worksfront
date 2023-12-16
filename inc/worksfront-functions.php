@@ -28,3 +28,15 @@ function worksfront_do_shortcode( $tag, array $atts = array(), $content = null )
 
 	return call_user_func( $shortcode_tags[ $tag ], $atts, $content, $tag );
 }
+
+/**
+ * Function to help determine the best foreground/text colour for use on a background shade.
+ *
+ * @param string $colour The background colour.
+ *
+ * @return string Compatible neutral colour.
+ */
+function worksfront_foreground_colour( $colour ) {
+	// Calculate perceived lightness/compatibility.
+	return '#FFFFFF';
+}

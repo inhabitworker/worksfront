@@ -3,8 +3,6 @@
  * Worksfront Class
  */
 
-namespace Includes;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -15,12 +13,35 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Worksfront {
 
 	/**
+	 * WooCommerce class instance.
+	 *
+	 * @var Worksfront_WooCommerce
+	 */
+	public $woocommerce;
+
+	/**
 	 * Class constructor
 	 */
 	public function __construct() {
-
 		add_action( 'after_setup_theme', array( $this, 'setup' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue' ) );
+		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue' ) );
+
+		if ( class_exists( 'WooCommerce' ) ) {
+			$this->woocommerce = require 'woocommerce/class-worksfront-woocommerce.php';
+		}
+
+		$this->activate();
+	}
+
+	public function activate() {
+		add_action( 'wp_enqueue_scripts', array( $this, 'vital' ) );
+		add_action( 'admin_enqueue_scripts', array( $this, 'vital' ) );
+	}
+
+	public function vital() {
+		global $worksfront_vite;
+		$worksfront_vite->use_vite_asset( 'src/main.ts' );
 	}
 
 	/**
@@ -72,10 +93,10 @@ class Worksfront {
 	 * @link https://codex.wordpress.org/Function_Reference/register_sidebar
 	 */
 	public function widgets_init() {
-		$sidebar_args['header'] = array(
-			'name'        => __( 'Header', 'worksfront' ),
-			'id'          => 'header-widgets',
-			'description' => __( 'Widgets for the header area, appearing in a right-aligned flex box as part of broader header contents.', 'worksfront' ),
+		$sidebar_args['footer'] = array(
+			'name'        => __( 'Footer', 'worksfront' ),
+			'id'          => 'footer-widgets',
+			'description' => __( 'Widgets for the footer area.', 'worksfront' ),
 		);
 
 		$sidebar_args = apply_filters( 'worksfront_sidebar_args', $sidebar_args );

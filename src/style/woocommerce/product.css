@@ -1,0 +1,30 @@
+/** Single Product **/
+
+article.product {
+}
+
+div.product {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	margin: 0;
+}
+
+div.product .product_single_model {
+	height: 16em;
+	margin: auto;
+}
+
+div.product * {
+	margin: auto;
+}
+
+.woocommerce div.product div.summary.entry-summary {
+	margin: auto;
+	margin-bottom: 0.4em;
+}
+
+div.product_meta {
+	display: none;
+}
+

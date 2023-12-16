@@ -1,0 +1,53 @@
+/** Post head region **/
+
+.post-head-container {
+	width: 80%;
+	margin: auto;
+	justify-content: space-between;
+	margin-bottom: 3em;
+	padding-bottom: 1em;
+}
+
+.post-head-container h1 {
+	font-size: 1.6em;
+	margin: 0;
+	font-weight: bold;
+	margin-bottom: 1em;
+}
+
+.post-meta-container {
+	display: flex;
+	flex-direction: column;
+	text-align: right;
+	justify-content: flex-end;
+}
+
+.post-meta-container .categories, .post-meta-container .tags {
+	justify-content: flex-end;
+}
+
+/** Article formatting **/
+
+article {
+	margin: auto;
+}
+
+article h1 {
+	font-size: 2em;
+}
+
+article h4 {
+	font-size: 1.2em;
+}
+
+article img {
+	display: block;
+	max-width: 75%;
+	margin: auto;
+}
+
+@media only screen and (max-width: 720px) {
+	article {
+		width: 100%;
+	}
+}

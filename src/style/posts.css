@@ -1,0 +1,70 @@
+/* Post list styling. Index/Archive etc. */
+
+/** Top Frame **/
+
+.blog-heading {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-bottom: 1em;
+}
+
+/** Posts **/
+
+.indexed-posts-container {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	white-space: nowrap;
+}
+
+.indexed-post-container {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	margin: 0.2em;
+	gap: 0.5em;
+}
+
+.date-group-container {
+	display: block;
+	text-align: right;
+	border-bottom: 1px solid var(--fg);
+	color: var(--fg);
+	padding: 0.2em;
+	margin-bottom: 0.4em;
+}
+
+.date-year {
+	color: var(--mg);
+	font-size: 0.8em;
+}
+
+.day {
+	text-align: right;
+	width: 4em;
+	height: 100%;
+	margin: 0;
+}
+
+.day::after {
+	content: ' - ';
+}
+
+.post-title {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+
+
+/** Pagination **/
+
+.nav-links {
+	display: flex;
+	gap: 0.4em;
+	width: fit-content;
+	margin: auto;
+	margin-top: 1em;
+}

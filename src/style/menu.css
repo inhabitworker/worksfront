@@ -1,0 +1,59 @@
+/** Styling for responsive menu **/
+
+#menu-toggle {
+	display: none;
+}
+
+@media screen and (max-width: 720px) {
+	header {
+		justify-content: space-between;
+	}
+	
+	#main-menu {
+		position: absolute;
+		top: 0.4em;
+		right: 0;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+		height: 100%;
+		text-align: right;
+	}
+
+	#main-menu a {
+		display: none;
+		font-size: 4em;
+		width: 100%;
+	}
+
+	.icon {
+		display: none;
+	}
+
+	#main-menu #menu-toggle {
+		display: block;
+		font-size: 3em;
+		color: var(--fg);
+	}
+
+	#main-menu #menu-toggle {
+		display: block;
+		font-size: 3em;
+	}
+
+	#main-menu.responsive {
+		position: fixed;
+		top: 3.2em;
+		right: 0.4em;
+		width: 100%;
+
+		z-index: 100;
+
+		background-color: var(--bg);
+	}
+
+	#main-menu.responsive a {
+		display: block;
+	}
+
+}

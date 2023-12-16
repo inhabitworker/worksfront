@@ -17,4 +17,3 @@
 		<?php wp_body_open(); ?>
 		<?php do_action( 'worksfront_header' ); ?>
 		<?php do_action( 'worksfront_before_content' ); ?>
-		<?php do_action( 'worksfront_content_top' ); ?>

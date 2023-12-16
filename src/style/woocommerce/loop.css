@@ -1,0 +1,93 @@
+/** Products Loop/Index **/
+
+ul.products.columns-4 {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 0.8em;
+
+	margin: 0;
+	margin-bottom: 2em;
+	margin-top: 2em;
+
+	width: 100%;
+}
+
+/** some default pseudo-element ruins grid, get rid **/
+.woocommerce .products ul::after, .woocommerce .products ul::before, .woocommerce ul.products::after, .woocommerce ul.products::before {
+	display: none;
+}
+
+.woocommerce ul.products li.product .price {
+	color: var(--fg);
+	text-align: center;
+}
+
+.woocommerce ul.products li.product.type-product {
+	width: 100%;
+	outline: 1px solid var(--mg);
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+
+	margin: 0;
+}
+
+.woocommerce ul.products li.product a.button {
+	display: block;
+	position: relative;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	padding: 0.4em;
+	width: fit-content;
+	align-self: flex-end;
+
+	margin-top: 0.4em;
+	margin-bottom: 0;
+	/** mimic standard link **/
+	background: none;
+	background-color: green;
+	font-weight: bold;
+	color: white; /* var(--highlight); */
+	text-decoration: underline;
+
+	border-radius: 0;
+}
+.woocommerce ul.products li.product a.button:hover {
+	color: green;
+	outline: 1px solid green;
+	background-color: var(--bg);
+}
+
+span.onsale {
+	display: none;
+}
+
+.woocommerce ul.products li.product a h2 {
+	text-align: center;
+}
+
+
+.woocommerce ul.products li.product a.added_to_cart {
+	display: none;
+}
+
+@media only screen and (max-width: 960px) {
+	ul.products.columns-4 {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media only screen and (max-width: 720px) {
+	ul.products.columns-4 {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	ul.products.columns-4 {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}

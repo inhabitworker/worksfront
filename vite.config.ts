@@ -1,5 +1,4 @@
 import { PluginOption, defineConfig } from 'vite'
-import { resolve } from 'path'
 
 const reloadPlugin = (): PluginOption => { 
     return {
@@ -14,18 +13,16 @@ const reloadPlugin = (): PluginOption => {
 export default defineConfig({
     build: {
         manifest: true,
+		// emptyOutDir: true,
         rollupOptions: {
-            input: {
-                main: resolve(__dirname) + '/src/main.ts'
-            }
+            input: './src/main.ts',
         }
     },
     server: {
+		host: true,
         cors: true,
-        strictPort: false,
-        port: 4510,
+        strictPort: true,
+        port: 4510
     },
-    plugins: [
-        reloadPlugin()
-    ]
+	plugins: [ reloadPlugin() ]
 });

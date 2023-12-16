@@ -17,27 +17,20 @@
  */
 
 /**
- * Cart with account link for header.
+ * WooCommerce functionality items for for header (links/cart).
  *
  * The cart widget originates in the main WooCommerce plugin:
  * > woocommerce/plugins/woocommerce/includes/widgets/class-wc-widget-cart.php
- *
  * Which is registered by function "wc_register_widgets" applied to standard "widgets_init":
  * > woocommerce/plugins/woocommerce/includes/wc-widget-functions.php
  */
 function worksfront_header_woocommerce() {
+	// Presumably check needed as this is hooked in unspecified hookers.
 	if ( worksfront_is_woocommerce_activated() ) {
-		if ( is_cart() ) {
-			$class = 'active';
-		}
 		?>
-		<nav>
-			<div>
-				<a href="/account">Account</a>
-			</div>
-			<div>
-				<a href="/cart"> Cart </a>
-			</div>
+		<nav class="commerce-nav">
+			<a class="account" href=<?php echo esc_url( wc_get_page_permalink( 'myaccount' ) ); ?>> &#128100; </a>
+			<a class="basket" href=<?php echo esc_url( wc_get_page_permalink( 'cart' ) ); ?> > &#x1f9fa; </a>
 		</nav>
 			<?php
 	}
@@ -48,7 +41,7 @@ function worksfront_header_woocommerce() {
  *
  * @uses    worksfront_do_shortcode
  */
-function storefront_shop_messages() {
+function worksfront_shop_messages() {
 	if ( ! is_checkout() ) {
 		echo wp_kses_post( worksfront_do_shortcode( 'woocommerce_messages' ) );
 	}

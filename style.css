@@ -16,10 +16,13 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
+/* Fundamentally this will attempty to override the myriad defaults. */
+
 /* Variables */
 :root{
-    --highlight: teal;
-    --complement: orange;
+    --highlight: navy;
+    --complement: teal;
+	--link: blue;
     --bg: white;
     --fg: black;
     --mg: gray;
@@ -29,33 +32,25 @@ Use it to make something cool, have fun, and share what you've learned with othe
     font-size: 1rem;
 }
 
-/* Header */
-
-header {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid black;
+body {
+	margin-bottom: 4em;
 }
 
-.identity {
-    text-align: center;
-    font-size: 1.8em;
+/* Global defaults override */
+
+a {
+	color: var(--link);
+	text-decoration: underline;
 }
 
-nav ul {
-    display: flex;
-    flex-direction: row;
-    margin: 0;
+a:visited {
+	color: var(--link);
 }
 
-nav ul li {
-    display: block;
-    margin: 1em;
+a:hover {
+	color: var(--complement);
 }
 
-header img {
-    display: block;
-    max-height: 2em;
-    width: auto;
-    object-fit: contain;
+a:active {
+	color: var(--mg);
 }
